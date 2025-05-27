@@ -7,3 +7,13 @@ D:\#GAMES\GTA V\#MODS\##Custom Mod\QohwahMod\Qohwah_Template\obj\x64\Release\net
 D:\#GAMES\GTA V\#MODS\##Custom Mod\QohwahMod\Qohwah_Template\obj\x64\Release\net48\Qohwah.csproj.CoreCompileInputs.cache
 D:\#GAMES\GTA V\#MODS\##Custom Mod\QohwahMod\Qohwah_Template\obj\x64\Release\net48\Qohwah.dll
 D:\#GAMES\GTA V\#MODS\##Custom Mod\QohwahMod\Qohwah_Template\obj\x64\Release\net48\Qohwah.pdb
+C:\laragon\www\QohwahMod-Dev\Qohwah_Template\bin\x64\Release\net48\Qohwah.dll
+C:\laragon\www\QohwahMod-Dev\Qohwah_Template\bin\x64\Release\net48\Qohwah.pdb
+C:\laragon\www\QohwahMod-Dev\Qohwah_Template\obj\x64\Release\net48\Qohwah.csproj.AssemblyReference.cache
+C:\laragon\www\QohwahMod-Dev\Qohwah_Template\obj\x64\Release\net48\Qohwah.GeneratedMSBuildEditorConfig.editorconfig
+C:\laragon\www\QohwahMod-Dev\Qohwah_Template\obj\x64\Release\net48\Qohwah.AssemblyInfoInputs.cache
+C:\laragon\www\QohwahMod-Dev\Qohwah_Template\obj\x64\Release\net48\Qohwah.AssemblyInfo.cs
+C:\laragon\www\QohwahMod-Dev\Qohwah_Template\obj\x64\Release\net48\Qohwah.csproj.CoreCompileInputs.cache
+C:\laragon\www\QohwahMod-Dev\Qohwah_Template\obj\x64\Release\net48\Qohwah.sourcelink.json
+C:\laragon\www\QohwahMod-Dev\Qohwah_Template\obj\x64\Release\net48\Qohwah.dll
+C:\laragon\www\QohwahMod-Dev\Qohwah_Template\obj\x64\Release\net48\Qohwah.pdb

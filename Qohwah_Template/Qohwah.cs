@@ -1,11 +1,12 @@
-﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using GTA;
+﻿using GTA;
 using GTA.Math;
 using GTA.Native;
 using LemonUI;
 using LemonUI.Menus;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 public class Qohwah : Script
@@ -13,6 +14,7 @@ public class Qohwah : Script
     private int wins = 0;
     private readonly string winsPath = "scripts/QohwahWins.ini";
     private readonly string racesPath = "scripts/QohwahRaces.ini";
+    private readonly string configPath = "scripts/QohwahConfig.ini";
     private ObjectPool menuPool = new ObjectPool();
     private NativeMenu menu;
     private List<(string Name, Vector3 Start, float StartYaw, Vector3 Finish, float FinishYaw)> races = new List<(string, Vector3, float, Vector3, float)>();
@@ -23,18 +25,52 @@ public class Qohwah : Script
     private bool isCountingDown = false;
     private Blip raceBlip = null;
     private bool hasDied = false;
+    private int respawnCooldownFrames = 0;
     private Vehicle raceVehicle = null;
-    private readonly Model raceVehicleModel = new Model(VehicleHash.Sultan);
+    private readonly Model raceVehicleModel = new Model(VehicleHash.Sultan); 
+    private Keys customKey = Keys.F5;
+    private bool autoDecreaseWins = true;
+    private Keys manualDecreaseKey = Keys.Subtract;
 
     public Qohwah()
     {
         Tick += OnTick;
         KeyDown += OnKeyDown;
 
+        LoadConfig();
         LoadWins();
         LoadRaces();
         SetupMenu();
         GTA.UI.Screen.ShowSubtitle("Qohwah Mod Loaded!");
+    }
+    private void LoadConfig()
+    {
+        try
+        {
+            if (!File.Exists(configPath)) return;
+            var lines = File.ReadAllLines(configPath);
+            foreach (var line in lines)
+            {
+                if (line.StartsWith("TriggerKey="))
+                {
+                    string keyName = line.Substring("TriggerKey=".Length).Trim();
+                    if (Enum.TryParse(keyName, out Keys parsedKey))
+                    {
+                        customKey = parsedKey;
+                    }
+                }
+                else if (line.StartsWith("AutoDecreaseWinsOnDeath", StringComparison.OrdinalIgnoreCase))
+                {
+                    autoDecreaseWins = line.IndexOf("true", StringComparison.OrdinalIgnoreCase) >= 0;
+                }
+                else if (line.StartsWith("ManualDecreaseKey", StringComparison.OrdinalIgnoreCase))
+                {
+                    var keyPart = line.Split('=')[1].Trim();
+                    Enum.TryParse(keyPart, out manualDecreaseKey);
+                }
+            }
+        }
+        catch { }
     }
 
     private void SetupMenu()
@@ -62,9 +98,12 @@ public class Qohwah : Script
         float heading = races[index].StartYaw;
 
         Game.Player.Character.Position = start;
-        Game.Player.Character.Heading = heading;
-        Game.Player.Character.Health = Game.Player.Character.MaxHealth;
-        Game.Player.Character.Armor = 0;
+        Game.Player.Character.Heading = heading; 
+        Game.Player.Character.MaxHealth = 200;
+        Game.Player.Character.Health = 200;
+        Game.Player.Character.Armor = 100;
+        Function.Call(Hash.SET_PED_SUFFERS_CRITICAL_HITS, Game.Player.Character, false);
+
         Game.Player.Character.Task.ClearAllImmediately();
 
         SpawnRaceVehicle(start, heading);
@@ -80,6 +119,7 @@ public class Qohwah : Script
         raceBlip.ShowRoute = true;
 
         GTA.UI.Screen.ShowSubtitle("Start Racing!", 3000);
+        hasDied = false;
     }
 
     private void SpawnRaceVehicle(Vector3 position, float heading)
@@ -100,20 +140,21 @@ public class Qohwah : Script
 
     private void OnKeyDown(object sender, KeyEventArgs e)
     {
-        if (e.KeyCode == Keys.F5)
+        if (e.KeyCode == customKey)
         {
             menu.Visible = !menu.Visible;
+        }
+
+        if (e.KeyCode == manualDecreaseKey)
+        {
+            wins--;
+            SaveWins();
+            GTA.UI.Screen.ShowSubtitle($"Wins manually decreased: {wins}", 3000);
         }
     }
 
     private void OnTick(object sender, EventArgs e)
     {
-        // Buka menu dengan RB + LT (Gamepad)
-        if (Game.IsKeyPressed(System.Windows.Forms.Keys.F5) || (Game.IsControlPressed(GTA.Control.Jump)))
-        {
-            menu.Visible = !menu.Visible;
-        }
-
         menuPool.Process();
 
         float health = Game.Player.Character.Health;
@@ -171,9 +212,6 @@ public class Qohwah : Script
 
         if (dist < radius && !isCountingDown)
         {
-            wins++;
-            SaveWins();
-            GTA.UI.Screen.ShowSubtitle("Finish! Wins: " + wins, 3000);
             countdown = 10f;
             isCountingDown = true;
 
@@ -186,14 +224,25 @@ public class Qohwah : Script
 
         if (isCountingDown)
         {
-            countdown -= Game.LastFrameTime;
-
-            DrawText($"~r~{Math.Ceiling(countdown)}", 0.5f, 0.17f, 1.2f, 255, 0, 0);
-
-            if (countdown <= 0f)
+            // Batalkan countdown jika keluar radius finish
+            if (Game.Player.Character.Position.DistanceTo(race.Finish) > radius)
             {
-                StartRace(currentRaceIndex);
-                GTA.UI.Screen.ShowSubtitle("Restarted!", 3000);
+                isCountingDown = false;
+                GTA.UI.Screen.ShowSubtitle("You moved! Countdown canceled.", 3000);
+            }
+            else
+            {
+                countdown -= Game.LastFrameTime;
+                DrawText($"~r~{Math.Ceiling(countdown)}", 0.5f, 0.17f, 1.2f, 255, 0, 0);
+
+                if (countdown <= 0f)
+                {
+                    wins++;
+                    SaveWins();
+                    StartRace(currentRaceIndex);
+                    GTA.UI.Screen.ShowSubtitle("Wins: " + wins, 3000);
+                    //GTA.UI.Screen.ShowSubtitle("Restarted!", 3000);
+                }
             }
         }
 
@@ -202,14 +251,27 @@ public class Qohwah : Script
             hasDied = true;
 
             Function.Call(Hash.RESURRECT_PED, Game.Player.Character.Handle);
-            Game.Player.Character.Health = Game.Player.Character.MaxHealth;
-            Game.Player.Character.Armor = 0;
+            Game.Player.Character.MaxHealth = 200;
+            Game.Player.Character.Health = 200;
+            Game.Player.Character.Armor = 100; 
 
-            wins = Math.Max(0, wins - 1);
-            SaveWins();
+            if (autoDecreaseWins)
+            {
+                wins--;
+                SaveWins();
+            }
 
-            StartRace(currentRaceIndex);
-            GTA.UI.Screen.ShowSubtitle("You died! Restarting race...", 3000);
+            respawnCooldownFrames = 900; // delay 15 detik (900 frame)
+        }
+
+        if (respawnCooldownFrames > 0)
+        {
+            respawnCooldownFrames--;
+            if (respawnCooldownFrames == 0)
+            {
+                StartRace(currentRaceIndex);
+                GTA.UI.Screen.ShowSubtitle("You died! Restarting race...", 3000);
+            }
         }
     }
 

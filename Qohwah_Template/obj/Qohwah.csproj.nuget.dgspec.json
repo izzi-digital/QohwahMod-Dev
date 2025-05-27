@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\#GAMES\\GTA V\\#MODS\\##Custom Mod\\QohwahMod\\Qohwah_Template\\Qohwah.csproj": {}
+    "C:\\laragon\\www\\QohwahMod-Dev\\Qohwah_Template\\Qohwah.csproj": {}
   },
   "projects": {
-    "D:\\#GAMES\\GTA V\\#MODS\\##Custom Mod\\QohwahMod\\Qohwah_Template\\Qohwah.csproj": {
+    "C:\\laragon\\www\\QohwahMod-Dev\\Qohwah_Template\\Qohwah.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\#GAMES\\GTA V\\#MODS\\##Custom Mod\\QohwahMod\\Qohwah_Template\\Qohwah.csproj",
+        "projectUniqueName": "C:\\laragon\\www\\QohwahMod-Dev\\Qohwah_Template\\Qohwah.csproj",
         "projectName": "Qohwah",
-        "projectPath": "D:\\#GAMES\\GTA V\\#MODS\\##Custom Mod\\QohwahMod\\Qohwah_Template\\Qohwah.csproj",
+        "projectPath": "C:\\laragon\\www\\QohwahMod-Dev\\Qohwah_Template\\Qohwah.csproj",
         "packagesPath": "C:\\Users\\IzziDigi\\.nuget\\packages\\",
-        "outputPath": "D:\\#GAMES\\GTA V\\#MODS\\##Custom Mod\\QohwahMod\\Qohwah_Template\\obj\\",
+        "outputPath": "C:\\laragon\\www\\QohwahMod-Dev\\Qohwah_Template\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

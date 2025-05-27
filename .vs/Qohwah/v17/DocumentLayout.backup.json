@@ -1,14 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\#GAMES\\GTA V\\#MODS\\##Custom Mod\\QohwahMod\\",
+  "WorkspaceRootPath": "C:\\laragon\\www\\QohwahMod-Dev\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|Qohwah_Template\\Qohwah.csproj|d:\\#games\\gta v\\#mods\\##custom mod\\qohwahmod\\qohwah_template\\qohwah.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|Qohwah_Template\\Qohwah.csproj|c:\\laragon\\www\\qohwahmod-dev\\qohwah_template\\qohwah.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|Qohwah_Template\\Qohwah.csproj|solutionrelative:qohwah_template\\qohwah.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|Qohwah_Template\\Qohwah.csproj|d:\\#games\\gta v\\#mods\\##custom mod\\qohwahmod\\qohwah_template\\qohwah.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|Qohwah_Template\\Qohwah.csproj|solutionrelative:qohwah_template\\qohwah.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,29 +14,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Qohwah.csproj",
-              "DocumentMoniker": "D:\\#GAMES\\GTA V\\#MODS\\##Custom Mod\\QohwahMod\\Qohwah_Template\\Qohwah.csproj",
-              "RelativeDocumentMoniker": "Qohwah_Template\\Qohwah.csproj",
-              "ToolTip": "D:\\#GAMES\\GTA V\\#MODS\\##Custom Mod\\QohwahMod\\Qohwah_Template\\Qohwah.csproj",
-              "RelativeToolTip": "Qohwah_Template\\Qohwah.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-26T17:05:26.557Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Qohwah.cs",
-              "DocumentMoniker": "D:\\#GAMES\\GTA V\\#MODS\\##Custom Mod\\QohwahMod\\Qohwah_Template\\Qohwah.cs",
+              "DocumentMoniker": "C:\\laragon\\www\\QohwahMod-Dev\\Qohwah_Template\\Qohwah.cs",
               "RelativeDocumentMoniker": "Qohwah_Template\\Qohwah.cs",
-              "ToolTip": "D:\\#GAMES\\GTA V\\#MODS\\##Custom Mod\\QohwahMod\\Qohwah_Template\\Qohwah.cs",
+              "ToolTip": "C:\\laragon\\www\\QohwahMod-Dev\\Qohwah_Template\\Qohwah.cs",
               "RelativeToolTip": "Qohwah_Template\\Qohwah.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAowIgAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAPIAAAAAAAAAAAAuwAYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-26T09:41:49.952Z",
               "EditorCaption": ""

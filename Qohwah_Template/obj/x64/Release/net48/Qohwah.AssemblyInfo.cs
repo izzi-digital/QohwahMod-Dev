@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Qohwah")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06c65b80e4f9db99076fc839340a8b1a198d8524")]
 [assembly: System.Reflection.AssemblyProductAttribute("Qohwah")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Qohwah")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

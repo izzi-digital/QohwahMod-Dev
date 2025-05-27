@@ -1,0 +1,27 @@
+# Visual Studio cache
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build output
+bin/
+obj/
+*.pdb
+
+# OS-specific
+Thumbs.db
+.DS_Store
+
+# Git folder (sudah otomatis tidak akan ikut terupload)
+.git/
+
+# Rider / JetBrains IDE
+.idea/
+
+# Logs
+*.log
+
+# Konfigurasi lokal
+Qohwah_Template/*.ini
