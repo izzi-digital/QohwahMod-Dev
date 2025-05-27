@@ -25,3 +25,5 @@ Thumbs.db
 
 # Konfigurasi lokal
 Qohwah_Template/*.ini
+
+*.zip
