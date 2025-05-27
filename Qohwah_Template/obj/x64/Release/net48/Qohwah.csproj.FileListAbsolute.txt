@@ -1,0 +1,9 @@
+D:\#GAMES\GTA V\#MODS\##Custom Mod\QohwahMod\Qohwah_Template\bin\x64\Release\net48\Qohwah.dll
+D:\#GAMES\GTA V\#MODS\##Custom Mod\QohwahMod\Qohwah_Template\bin\x64\Release\net48\Qohwah.pdb
+D:\#GAMES\GTA V\#MODS\##Custom Mod\QohwahMod\Qohwah_Template\obj\x64\Release\net48\Qohwah.csproj.AssemblyReference.cache
+D:\#GAMES\GTA V\#MODS\##Custom Mod\QohwahMod\Qohwah_Template\obj\x64\Release\net48\Qohwah.GeneratedMSBuildEditorConfig.editorconfig
+D:\#GAMES\GTA V\#MODS\##Custom Mod\QohwahMod\Qohwah_Template\obj\x64\Release\net48\Qohwah.AssemblyInfoInputs.cache
+D:\#GAMES\GTA V\#MODS\##Custom Mod\QohwahMod\Qohwah_Template\obj\x64\Release\net48\Qohwah.AssemblyInfo.cs
+D:\#GAMES\GTA V\#MODS\##Custom Mod\QohwahMod\Qohwah_Template\obj\x64\Release\net48\Qohwah.csproj.CoreCompileInputs.cache
+D:\#GAMES\GTA V\#MODS\##Custom Mod\QohwahMod\Qohwah_Template\obj\x64\Release\net48\Qohwah.dll
+D:\#GAMES\GTA V\#MODS\##Custom Mod\QohwahMod\Qohwah_Template\obj\x64\Release\net48\Qohwah.pdb

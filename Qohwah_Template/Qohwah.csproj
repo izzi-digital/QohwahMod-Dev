@@ -1,0 +1,26 @@
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <RootNamespace>Qohwah</RootNamespace>
+    <AssemblyName>Qohwah</AssemblyName>
+    <Platforms>x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="ScriptHookVDotNet3">
+      <HintPath>ScriptHookVDotNet3.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="LemonUI.SHVDN3">
+      <HintPath>LemonUI.SHVDN3.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+	  <Reference Include="System.Windows.Forms" />
+	  <Reference Include="System.Windows.Forms.DataVisualization" />
+	  <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+  </ItemGroup>
+
+</Project>
